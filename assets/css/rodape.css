@@ -1,0 +1,17 @@
+.rodape{
+    background-color:var(--rodape-cor);
+    height: 100vh;
+    padding-top: 3%;
+}
+.pokemon-logo{
+    width: 50%;
+}
+.rodape__social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3%;
+}
+.rodape__midia{
+    margin: 0 5%;
+}

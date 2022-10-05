@@ -4,7 +4,6 @@
 /* ------------------------------- */
 .cabecalho-principal{
     padding-top: 3%;
-
 }
 .pokemon-logo{
     margin: auto;
@@ -24,6 +23,7 @@
     text-align: center;
     color: var(--titulo-cor);
     font-size: 1rem;
+    margin-bottom: 3%;
 }
 .pokebola-img{
     margin: auto;
@@ -51,6 +51,7 @@
     corner,bottom-left corner): */
     border-radius: 5% 0% 0% 5% ;
     border: none;
+    background-color: black;
 }
 .busca-conteudo{
     display: flex;

@@ -12,11 +12,12 @@
 
         <title>Home | Pokedéx</title>
         <link href="./assets/css/reset.css" rel="stylesheet">
-        <link href="./assets/css/cabecalho.css" rel="stylesheet">
-        <link href="./assets/css/base.css" rel="stylesheet">
         <link href="./assets/css/normalize.css" rel="stylesheet">
-
-
+        <link href="./assets/css/base.css" rel="stylesheet">
+        <link href="./assets/css/cabecalho.css" rel="stylesheet">
+        <link href="./assets/css/principal.css" rel="stylesheet">
+        <link href="./assets/css/rodape.css" rel="stylesheet">
+        
     </head>
     <body>
         <header class="cabecalho">
@@ -32,18 +33,31 @@
             <div class="cabecalho-busca container">
                 <label class="busca-texto" for="pokemon">Busque aqui seu Pokémon!</label>
                 <div class="busca-conteudo">
-                    <input class="busca-display" type="text" id="pokemon" placeholder="Nome ou código do Pokémon!">
+                    <input class="busca-display" type="text" id="pokemon" placeholder="Nome do Pokémon!">
                     <img class="lupa-img" src="./assets/img/lupa.svg">
                 </div>
             </div>
-
         </header>
         <main>
             <section class="principal container">
-
+                <div class="card">
+                    <p>Aqui fica conteudo principal</p>
+                    <div>
+                        <img src="">
+                        <p id="pokemon-nome"></p>
+                        <p id="pokemon-id"></p>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer></footer>
-
+        <footer class="rodape">
+            <img class="pokemon-logo" src="./assets/img/pokemon-logo.png" alt="Logotipo do Pokemon">
+            <ul class="rodape__social container">
+                <li class="rodape__midia"><a href="#" ><img src="./assets/img/facebook.png" alt="Ícone do Facebook"></a></li>
+                <li class="rodape__midia"><a href="#"><img src="./assets/img/twitter.png" alt="Ícone do twitter"></a></li>
+                <li class="rodape__midia"><a href="#"><img src="./assets/img/instagram.png" alt="Ícone do instagram"></a></li>
+            </ul>
+        </footer>
+        <script src="./assets/main.js"></script>
     </body>
 </html>
