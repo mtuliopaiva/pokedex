@@ -1,6 +1,12 @@
 :root{
     --cabecalho-cor: #C20001;
     --titulo-cor: #FFFFFF;
+    --principal-cor: #D9D9D9;
+    --botao-busca-cor: #EF4036;
+    --fonte: 'Montserrat', sans-serif;
+}
+body{
+    font-family: var(--fonte);
 }
 .container{
     margin: 0 3%;

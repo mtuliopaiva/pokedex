@@ -6,6 +6,10 @@
 
         <link rel="shortcut icon" type="image/jpg" href="./assets/img/favicon.ico"/>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
         <title>Home | Pokedéx</title>
         <link href="./assets/css/reset.css" rel="stylesheet">
         <link href="./assets/css/cabecalho.css" rel="stylesheet">
@@ -15,15 +19,27 @@
 
     </head>
     <body>
-        <header class="cabecalho container">
-            <img class="pokemon-logo" src="./assets/img/pokemon-logo.png" alt="Logotipo do Pokemon">
-            <nav></nav>
-            <h1 class="cabecalho-titulo">Quem é este Pokémon?</h1>
-            <p class="cabecalho-descricao">Venha conhecer os seus pokémons favoritos</p>
-            <img class="pokebola-img" src="./assets/img/pokebola.png" alt="Logotipo de uma Pokebola ">
+        <header class="cabecalho">
+            <div class="cabecalho-principal container">
+                <img class="pokemon-logo" src="./assets/img/pokemon-logo.png" alt="Logotipo do Pokemon">
+                <nav></nav>
+            </div>
+            <div class="cabecalho-chamada container">
+                <h1 class="cabecalho-titulo">Quem é este Pokémon?</h1>
+                <p class="cabecalho-descricao">Venha conhecer os seus pokémons favoritos</p>
+                <img class="pokebola-img" src="./assets/img/pokebola.png" alt="Logotipo de uma Pokebola ">
+            </div>
+            <div class="cabecalho-busca container">
+                <label class="busca-texto" for="pokemon">Busque aqui seu Pokémon!</label>
+                <div class="busca-conteudo">
+                    <input class="busca-display" type="text" id="pokemon" placeholder="Nome ou código do Pokémon!">
+                    <img class="lupa-img" src="./assets/img/lupa.svg">
+                </div>
+            </div>
+
         </header>
         <main>
-            <section>
+            <section class="principal container">
 
             </section>
         </main>

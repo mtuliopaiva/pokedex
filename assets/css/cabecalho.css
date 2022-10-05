@@ -1,10 +1,19 @@
 .cabecalho{
     background:var(--cabecalho-cor) ;
 }
+/* ------------------------------- */
+.cabecalho-principal{
+    padding-top: 3%;
+
+}
 .pokemon-logo{
     margin: auto;
     display: block;
     width: 50%;
+}
+/* ------------------------------- */
+.cabecalho-chamada{
+
 }
 .cabecalho-titulo{
     text-align: center;
@@ -20,4 +29,40 @@
     margin: auto;
     display: block;
     width: 50%;
+    margin-bottom: 3%;
+}
+/* ------------------------------- */
+.cabecalho-busca{
+    text-align: center;
+    padding-bottom: 3%;
+}
+.busca-texto{
+    color: var(--titulo-cor);
+    font-size: 1rem;
+}
+.busca-display{
+    text-align: center;
+    width: 70%;
+    padding: 2% 2%;
+    color: var(--titulo-cor);
+    font-size: 1rem;
+    /* Four values 
+    (top-left corner, top-right corner, bottom-right 
+    corner,bottom-left corner): */
+    border-radius: 5% 0% 0% 5% ;
+    border: none;
+}
+.busca-conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1%;
+}
+.lupa-img{
+    width: 8%;
+    background-color: var(--botao-busca-cor);
+    padding: 2% 2%;
+    border-radius: 0% 10% 10% 0% ;
+    /* offset-x | offset-y | blur-radius | color */
+
 }
