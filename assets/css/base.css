@@ -1,0 +1,7 @@
+:root{
+    --cabecalho-cor: #C20001;
+    --titulo-cor: #FFFFFF;
+}
+.container{
+    margin: 0 3%;
+}
