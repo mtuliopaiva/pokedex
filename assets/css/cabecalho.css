@@ -1,5 +1,6 @@
 .cabecalho{
     background:var(--cabecalho-cor) ;
+    padding-bottom: 3%;
 }
 /* ------------------------------- */
 .cabecalho-principal{
@@ -11,9 +12,7 @@
     width: 50%;
 }
 /* ------------------------------- */
-.cabecalho-chamada{
 
-}
 .cabecalho-titulo{
     text-align: center;
     color: var(--titulo-cor);
@@ -65,5 +64,7 @@
     padding: 2% 2%;
     border-radius: 0% 10% 10% 0% ;
     /* offset-x | offset-y | blur-radius | color */
-
+}
+.mensagem-erro{
+    
 }

@@ -2,12 +2,13 @@
 
 const nomePokemon = document.getElementById('pokemon');
 
-const pokemonDados =  document.querySelector('.principal');
+const pokemonDados =  document.querySelector('.card');
 
 const pokedexNome = document.querySelector('.card-nome') ;
 const pokedexID = document.querySelector('.card-id') ;
 const pokedexTipo = document.querySelector('.card-tipo');
-var pokedexImagem = document.querySelector('.card-img');
+const pokedexImagem = document.querySelector('.card-img');
+const pokedexEstatisticas =document.querySelector('.card-stats')
 
 var pokedexStats = document.querySelectorAll('.stats-numero');
 
@@ -26,7 +27,11 @@ async function buscaPokemon(nomePokemon) {
         var pokemonTipo = pokemonConvertido.types[0].type.name;
         let i=0;
 
-        pokemonDados.classList.toggle('escolhido');
+        pokedexNome.classList.remove('hide');
+        pokedexID.classList.remove('hide');
+        pokedexTipo.classList.remove('hide');
+        pokedexEstatisticas.classList.remove('hide');
+        
 
         console.log(pokemonConvertido);
 
@@ -35,14 +40,27 @@ async function buscaPokemon(nomePokemon) {
         pokedexTipo.innerHTML = "Tipo: " + pokemonTipo;
         pokedexImagem.setAttribute('src', pokemonImagem);
 
-        pokemonDados.style.cssText =  ' opacity: 1;';
+
 
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  pokemonConvertido.stats[i].base_stat;
         }
-
+        
     }catch(erro){
         console.log("Erro");
+        pokedexNome.innerHTML="Nome ou ID inválido";
+        pokedexID.innerHTML= "";
+        pokedexTipo.innerHTML = ""
+        pokedexImagem.setAttribute('src', "./assets/img/erro.svg");
+
+        for(i=0;i<6;i++){
+            pokedexStats[i].innerHTML =  "X";
+        }
+
     }
 }
-botaoBusca.addEventListener('click', () => buscaPokemon(nomePokemon.value.toLowerCase()));
+botaoBusca.addEventListener('click', () => {
+    buscaPokemon(nomePokemon.value.toLowerCase());
+
+    nomePokemon.value='';
+});
