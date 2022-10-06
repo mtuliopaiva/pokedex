@@ -2,6 +2,8 @@
 
 const nomePokemon = document.getElementById('pokemon');
 const statsNome = document.getElementById('pokemon-nome');
+
+const botaoBusca = document.querySelector('.lupa-img');
 const statsId = document.getElementById('pokemon-id');
 
 
@@ -9,13 +11,15 @@ async function buscaPokemon(nomePokemon) {
     try{
         var pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`);
         var pokemonConvertido = await pokemon.json();
+
+        var pokemonImagem = pokemonConvertido.sprites.other['official-artwork'].front_default;
+        var pokemonNome = pokemonConvertido.name;
+
         console.log(pokemonConvertido);
-        
-        console.log(pokemonConvertido.name);
-        console.log(pokemonConvertido.id);
-        console.log(pokemonConvertido.types[0].type.name);
-        console.log(pokemonConvertido.weight/10);
-        console.log(pokemonConvertido.height);
+        // console.log(pokemonConvertido.id);
+        // console.log(pokemonConvertido.types[0].type.name);
+        // console.log(pokemonConvertido.weight/10);
+        // console.log(pokemonConvertido.height);
 
         // Habilidades
         console.log(pokemonConvertido.stats[0].stat.name);
@@ -36,10 +40,17 @@ async function buscaPokemon(nomePokemon) {
         console.log(pokemonConvertido.stats[5].stat.name);
         console.log(pokemonConvertido.stats[5].base_stat);
 
-        statsNome.innerHTML=pokemonConvertido.name;
-        statsId.innerHTML=pokemonConvertido.id;
+        // statsNome.innerHTML=pokemonNome;
+        // ImprimiPokemon(pokemonImagem);
     }catch(erro){
         console.log("Erro");
     }
 }
-nomePokemon.addEventListener('focusout', () => buscaPokemon(nomePokemon.value.toLowerCase()));
+botaoBusca.addEventListener('click', () => buscaPokemon(nomePokemon.value.toLowerCase()));
+
+
+function ImprimiPokemon(imagem){
+    let img = document.createElement("img");
+    img.src=imagem;
+    statsId.appendChild(img);
+}
