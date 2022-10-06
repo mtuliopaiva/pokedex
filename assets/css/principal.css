@@ -2,6 +2,14 @@ main{
     background-color: var(--principal-cor);
     padding: 5% 5%;
 }
+.principal{
+    opacity: 0;
+}
+.escolhido{
+    opacity: 1;
+    transition: .5s ease-in-out;
+    
+}
 .card{
     background-color: white;
     align-items: center;
@@ -22,6 +30,12 @@ main{
 .card-nome{
     font-size: 3rem;
 }
+.card-nome::first-letter {
+    text-transform: uppercase;
+}
+.card-tipo::first-letter {
+    text-transform: uppercase;
+}
 .card-id, .card-tipo{
     padding-top: 5%;
     font-size: 1.5rem;
@@ -33,7 +47,7 @@ main{
 }
 
 /* --------------------------- */
-.stats{
+.card-stats{
     display: flex;
     flex-direction: column;
 }
@@ -41,6 +55,7 @@ main{
     text-align: center;
     margin-bottom: 3%;
     font-size: 1.5rem;
+    color: var(--principal-fonte-cor);
 }
 .stats-info-primario{
     display: grid;
@@ -53,10 +68,10 @@ main{
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 3%;
 }
-.stats-numero{
+.stats{
     text-align: center;
 }
-.teste-numero{
+.stats-numero{
     background-color: var(--cabecalho-cor);
     border-radius: 100%;
     /* 3.125rem - referencia 50px */
@@ -66,7 +81,7 @@ main{
     line-height: 2;
     margin: 0 auto;
 }
-.teste-nome{
+.stats-nome{
     margin-top: 5%;
     color: var(--principal-fonte-cor);
 }
