@@ -5,9 +5,6 @@ main{
 .hide{
     opacity: 0;
 }
-.pokedex img{
-    background-color: blue;
-}
 .card{
     background-color: white;
     align-items: center;
@@ -15,6 +12,7 @@ main{
     transition: 1s ease-in;
     border-radius: 5%;
     box-shadow: 0 2px 10px 2px #00000010;
+    transition: 1s ease-in-out;
 }
 .card-principal{
     padding-top: 3%;
@@ -42,7 +40,29 @@ main{
     width: 60%;
     display: block;
     margin: 0 auto;
-    transition: 1s ease-in-out;
+    
+}
+.btn-stats{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    background-color: var(--principal-cor);
+    border-radius: 100%;
+    /* 3.125rem - referencia 50px */
+    width: 3.125rem; 
+    height: 3.125rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    margin: 0 auto;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: var(--cabecalho-cor);
+    color: #ffffff;
+    transition: 0.5s ease-in-out;
 }
 
 /* --------------------------- */

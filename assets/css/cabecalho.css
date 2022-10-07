@@ -63,8 +63,13 @@
     background-color: var(--botao-busca-cor);
     padding: 2% 2%;
     border-radius: 0% 10% 10% 0% ;
+    cursor: pointer;
+    transition: 0.6s ease-in-out;
+    
     /* offset-x | offset-y | blur-radius | color */
 }
-.mensagem-erro{
+.lupa-img:hover{
+    background-color: var(--principal-cor);
+    color: black;
     
 }

@@ -11,9 +11,12 @@ const pokedexImagem = document.querySelector('.card-img');
 const pokedexEstatisticas =document.querySelector('.card-stats')
 
 var pokedexStats = document.querySelectorAll('.stats-numero');
+const botoesID = document.querySelector('.btn-stats');
 
 const botaoBusca = document.querySelector('.lupa-img');
 const statsId = document.getElementById('pokemon-id');
+
+var IDnumero;
 
 
 async function buscaPokemon(nomePokemon) {
@@ -31,16 +34,15 @@ async function buscaPokemon(nomePokemon) {
         pokedexID.classList.remove('hide');
         pokedexTipo.classList.remove('hide');
         pokedexEstatisticas.classList.remove('hide');
-        
-
-        console.log(pokemonConvertido);
+        botoesID.classList.remove('hide');
 
         pokedexNome.innerHTML=pokemonNome;
         pokedexID.innerHTML= "ID: " + pokemonID;
         pokedexTipo.innerHTML = "Tipo: " + pokemonTipo;
         pokedexImagem.setAttribute('src', pokemonImagem);
 
-
+        
+        IDnumero = pokemonID;
 
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  pokemonConvertido.stats[i].base_stat;
@@ -52,6 +54,7 @@ async function buscaPokemon(nomePokemon) {
         pokedexID.innerHTML= "";
         pokedexTipo.innerHTML = ""
         pokedexImagem.setAttribute('src', "./assets/img/erro.svg");
+        botoesID.classList.add('hide');
 
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  "X";
@@ -64,3 +67,15 @@ botaoBusca.addEventListener('click', () => {
 
     nomePokemon.value='';
 });
+
+botoesID.addEventListener('click', (evento) => {
+    const botaoSelecionado = evento.target.textContent;
+
+        if(botaoSelecionado =='+'){
+            IDnumero  += 1 ;
+        }
+        if(botaoSelecionado =='-'){
+            IDnumero  -= 1 ;
+        }
+        buscaPokemon(IDnumero);
+    })
