@@ -2,19 +2,20 @@
 
 const nomePokemon = document.getElementById('pokemon');
 
-const pokemonDados =  document.querySelector('.card');
-
 const pokedexNome = document.querySelector('.card-nome') ;
 const pokedexID = document.querySelector('.card-id') ;
 const pokedexTipo = document.querySelector('.card-tipo');
+const pokedexHabilidade = document.querySelector('.card-habilidade');
+const pokedexAltura = document.querySelector('.card-altura');
+const pokedexPeso = document.querySelector('.card-peso');
+
 const pokedexImagem = document.querySelector('.card-img');
-const pokedexEstatisticas =document.querySelector('.card-stats')
+const pokedexEstatisticas =document.querySelector('.card-stats');
 
 var pokedexStats = document.querySelectorAll('.stats-numero');
 const botoesID = document.querySelector('.btn-stats');
 
 const botaoBusca = document.querySelector('.lupa-img');
-const statsId = document.getElementById('pokemon-id');
 
 var IDnumero;
 
@@ -23,30 +24,42 @@ async function buscaPokemon(nomePokemon) {
     try{
         var pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`);
         var pokemonConvertido = await pokemon.json();
+        console.log(nomePokemon);
 
-        var pokemonImagem = pokemonConvertido.sprites.other['official-artwork'].front_default;
-        var pokemonNome = pokemonConvertido.name;
-        var pokemonID = pokemonConvertido.id;
-        var pokemonTipo = pokemonConvertido.types[0].type.name;
         let i=0;
 
+        const pokemonCaractersticas = {
+            "nome": pokemonConvertido.name,
+            "imagem": pokemonConvertido.sprites.other['official-artwork'].front_default,
+            "id": pokemonConvertido.id,
+            "tipo": pokemonConvertido.types[0].type.name,
+            "habilidade": pokemonConvertido.abilities[0].ability.name,
+            "altura" : pokemonConvertido.height/10,
+            "peso" : pokemonConvertido.weight/10
+        }
+        
         pokedexNome.classList.remove('hide');
         pokedexID.classList.remove('hide');
         pokedexTipo.classList.remove('hide');
+        pokedexHabilidade.classList.remove('hide');
+        pokedexAltura.classList.remove('hide');
+        pokedexPeso.classList.remove('hide');
         pokedexEstatisticas.classList.remove('hide');
         botoesID.classList.remove('hide');
 
-        pokedexNome.innerHTML=pokemonNome;
-        pokedexID.innerHTML= "ID: " + pokemonID;
-        pokedexTipo.innerHTML = "Tipo: " + pokemonTipo;
-        pokedexImagem.setAttribute('src', pokemonImagem);
-
+        pokedexNome.innerHTML=pokemonCaractersticas.nome;
+        pokedexID.innerHTML= "ID: " + pokemonCaractersticas.id;
+        pokedexImagem.setAttribute('src', pokemonCaractersticas.imagem);
+        pokedexTipo.innerHTML = "Tipo: " + pokemonCaractersticas.tipo;
+        pokedexHabilidade.innerHTML = "Habilidade: " + pokemonCaractersticas.habilidade;
+        pokedexAltura.innerHTML = "Altura: " + pokemonCaractersticas.altura + " m";
+        pokedexPeso.innerHTML = "Peso: " + pokemonCaractersticas.peso + " Kg";
         
-        IDnumero = pokemonID;
-
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  pokemonConvertido.stats[i].base_stat;
         }
+        
+        IDnumero = pokemonCaractersticas.id;
         
     }catch(erro){
         console.log("Erro");
@@ -54,6 +67,9 @@ async function buscaPokemon(nomePokemon) {
         pokedexID.innerHTML= "";
         pokedexTipo.innerHTML = ""
         pokedexImagem.setAttribute('src', "./assets/img/erro.svg");
+        pokedexHabilidade.innerHTML = "";
+        pokedexAltura.innerHTML = "";
+        pokedexPeso.innerHTML = "";
         botoesID.classList.add('hide');
 
         for(i=0;i<6;i++){
