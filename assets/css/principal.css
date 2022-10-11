@@ -116,3 +116,27 @@
     text-align: center;
     color: (--cabecalho-cor);
 }
+@media screen and (min-width: 768px) {
+    .principal{
+        background-color: var(--principal-cor);
+        overflow:hidden;
+        max-height: 1000px;
+        transition: max-height 1s ease-in-out;
+    }
+    .hide {
+        max-height: 0;
+        pointer-events: none;
+      }
+}
+@media screen and (min-width: 1024px) {
+    .principal{
+        background-color: var(--principal-cor);
+        overflow:hidden;
+        max-height: 1200px;
+        transition: max-height 1s ease-in-out;
+    }
+    .hide {
+        max-height: 0;
+        pointer-events: none;
+      }
+}
