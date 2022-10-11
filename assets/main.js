@@ -13,6 +13,7 @@ const pokedexImagem = document.querySelector('.card-img');
 const pokedexEstatisticas =document.querySelector('.card-stats');
 
 var pokedexStats = document.querySelectorAll('.stats-numero');
+const botoesID = document.querySelector('.btn-stats');
 
 const conteudo = document.querySelector('.principal');
 
@@ -72,6 +73,7 @@ async function buscaPokemon(nomePokemon) {
         pokedexHabilidade.innerHTML = "";
         pokedexAltura.innerHTML = "";
         pokedexPeso.innerHTML = "";
+        
 
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  "X";

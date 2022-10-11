@@ -65,7 +65,7 @@
     cursor: pointer;
     
 }
-.btn:active{
+.btn:hover{
     background-color: var(--cabecalho-cor);
     color: #ffffff;
     transition: 0.5s ease-in-out;
