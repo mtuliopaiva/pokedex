@@ -13,7 +13,6 @@ const pokedexImagem = document.querySelector('.card-img');
 const pokedexEstatisticas =document.querySelector('.card-stats');
 
 var pokedexStats = document.querySelectorAll('.stats-numero');
-const botoesID = document.querySelector('.btn-stats');
 
 const conteudo = document.querySelector('.principal');
 
@@ -61,18 +60,18 @@ async function buscaPokemon(nomePokemon) {
         IDnumero = pokemonCaractersticas.id;
         
     }catch(erro){
-        conteudo.style.cssText =  ' opacity:1;' + 
-        'height: auto;'  + 
-        'transition: opacity 1s ease-in;';
+        conteudo.style.cssText =  'padding: 5% 5%';
+        conteudo.classList.remove('hide');
+
         console.log("Erro");
         pokedexNome.innerHTML="Nome ou ID inválido";
         pokedexID.innerHTML= "";
-        pokedexTipo.innerHTML = ""
         pokedexImagem.setAttribute('src', "./assets/img/erro.svg");
+        pokedexTipo.innerHTML = ""
+    
         pokedexHabilidade.innerHTML = "";
         pokedexAltura.innerHTML = "";
         pokedexPeso.innerHTML = "";
-        botoesID.classList.add('hide');
 
         for(i=0;i<6;i++){
             pokedexStats[i].innerHTML =  "X";
