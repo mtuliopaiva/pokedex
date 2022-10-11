@@ -15,6 +15,8 @@ const pokedexEstatisticas =document.querySelector('.card-stats');
 var pokedexStats = document.querySelectorAll('.stats-numero');
 const botoesID = document.querySelector('.btn-stats');
 
+const conteudo = document.querySelector('.principal');
+
 const botaoBusca = document.querySelector('.lupa-img');
 
 var IDnumero;
@@ -37,15 +39,12 @@ async function buscaPokemon(nomePokemon) {
             "altura" : pokemonConvertido.height/10,
             "peso" : pokemonConvertido.weight/10
         }
+
+     
         
-        pokedexNome.classList.remove('hide');
-        pokedexID.classList.remove('hide');
-        pokedexTipo.classList.remove('hide');
-        pokedexHabilidade.classList.remove('hide');
-        pokedexAltura.classList.remove('hide');
-        pokedexPeso.classList.remove('hide');
-        pokedexEstatisticas.classList.remove('hide');
-        botoesID.classList.remove('hide');
+        conteudo.style.cssText =  'padding: 5% 5%';
+
+        conteudo.classList.remove('hide');
 
         pokedexNome.innerHTML=pokemonCaractersticas.nome;
         pokedexID.innerHTML= "ID: " + pokemonCaractersticas.id;
@@ -62,6 +61,9 @@ async function buscaPokemon(nomePokemon) {
         IDnumero = pokemonCaractersticas.id;
         
     }catch(erro){
+        conteudo.style.cssText =  ' opacity:1;' + 
+        'height: auto;'  + 
+        'transition: opacity 1s ease-in;';
         console.log("Erro");
         pokedexNome.innerHTML="Nome ou ID inválido";
         pokedexID.innerHTML= "";
